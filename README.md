@@ -6,7 +6,7 @@ General purpose Discord bot for all things anime!
 
 ## Tech Stack
 
-**Bot:** Python, [discord.py](https://discordpy.readthedocs.io/en/stable/index.html)
+**Bot:** Python, [discord.py](https://discordpy.readthedocs.io/en/stable/index.html), [AnilistPython](https://github.com/ReZeroE/AnilistPython), [hentai](https://github.com/hentai-chan/hentai)
 
 
   
