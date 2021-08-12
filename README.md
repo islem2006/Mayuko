@@ -12,9 +12,11 @@ General purpose Discord bot for all things anime!
   
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your .env file. See `.env.example` for info.
 
 `TOKEN`
+
+`NSFW`
 
   
 ## Run Locally

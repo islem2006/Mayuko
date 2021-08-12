@@ -1,5 +1,4 @@
 import discord
-
 from AnilistPython import Anilist
 from AnilistPython.botSupport import botSupportClass
 from discord.ext import commands
@@ -32,7 +31,7 @@ class AnilistCommands(commands.Cog):
         anilist_embed.add_field(name="Episodes", value=result_anime["airing_episodes"], inline=False)
         anilist_embed.add_field(name="Average score", value=result_anime["average_score"], inline=False)
         anilist_embed.set_footer(text="Data provided by anilist.co",
-                                 icon_url="https://avatarfiles.alphacoders.com/577/57772.png")
+                                 icon_url='https://avatarfiles.alphacoders.com/577/57772.png')
         await ctx.send(embed=anilist_embed)
 
     @commands.command(name='charsearch')
@@ -58,5 +57,6 @@ class AnilistCommands(commands.Cog):
                                       url="https://anilist.co/character/" + str(ani_id))
         anilist_embed.set_image(url=result_char["image"])
         anilist_embed.add_field(name="Native name", value=result_char["native_name"])
-        anilist_embed.set_footer(text="Data provided by anilist.co", icon_url="https://avatarfiles.alphacoders.com/577/57772.png")
+        anilist_embed.set_footer(text="Data provided by anilist.co",
+                                 icon_url='https://avatarfiles.alphacoders.com/577/57772.png')
         await ctx.send(embed=anilist_embed)
