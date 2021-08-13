@@ -64,17 +64,17 @@ class SystemCommands(commands.Cog):
             )
         if fumo_mode.friday_check():
             help_embed.set_footer(
-                text="Saucebot v2.0 | Happy Fumo Friday!",
+                text="Mayuko | Happy Fumo Friday!",
                 icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
             )
         else:
             help_embed.set_footer(
-                text="Saucebot v2.0",
+                text="Mayuko v2.0",
                 icon_url="https://avatarfiles.alphacoders.com/577/57772.png",
             )
         await ctx.send(embed=help_embed)
 
     @commands.command(pass_context=True)
     async def changelog(self, ctx):
-        await ctx.send("Changelog is available at https://github.com/DynamicDonkey/Saucebot-V2/blob/master/CHANGELOG.md")
+        await ctx.send("Changelog is available at https://github.com/DynamicDonkey/Mayuko/blob/master/CHANGELOG.md")
         await ctx.send("Happy hacking!")

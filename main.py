@@ -15,14 +15,14 @@ load_dotenv(find_dotenv())
 
 
 if __name__ == "__main__":
-    print("Saucebot V2 starting...")
+    print("Mayuko is starting...")
 
 
 @client.event
 async def on_ready():
     load_modules()
-    await client.change_presence(activity=discord.Game("$help for info :3"))
-    print("Saucebot V2 is ready!\n")
+    await client.change_presence(activity=discord.Game("$help >///<"))
+    print("Bot is ready!\n")
 
 
 def load_modules():

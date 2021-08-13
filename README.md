@@ -1,5 +1,5 @@
 
-# Saucebot V2
+# Mayuko
 
 General purpose Discord bot for all things anime!
 
@@ -24,13 +24,13 @@ To run this project, you will need to add the following environment variables to
 Clone the project
 
 ```bash
-  git clone https://github.com/DynamicDonkey/Saucebot-V2.git
+  git clone https://github.com/DynamicDonkey/Mayuko.git
 ```
 
 Go to the project directory
 
 ```bash
-  $ cd Saucebot-V2
+  $ cd Mayuko
 ```
 
 Install dependencies
