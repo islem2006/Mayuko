@@ -58,7 +58,7 @@ class SystemCommands(commands.Cog):
                 inline=False,
             )
             help_embed.add_field(
-                name='$nekolewd',
+                name='$nekolewd - NSFW COMMAND',
                 value="Sends a lewd neko picture",
                 inline=False,
             )
