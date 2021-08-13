@@ -22,6 +22,8 @@
 ### 5-8-21
 - Initial release
   - added `requirements.txt`
-  - Implemented anilist.co search
-  - Implemented [mywaifulist.moe](https://mywaifulist.moe) search
-  - Implemented nhentai.net search
+  - Implemented [anilist.co](https://anilist.co/) search
+    - Uses [AnilistPython](https://github.com/ReZeroE/AnilistPython)
+  - Implemented [mywaifulist.moe](https://mywaifulist.moe/) search
+  - Implemented [nhentai.net](https://nhentai.net/) search
+    - Uses [hentai](https://github.com/hentai-chan/hentai)
