@@ -36,6 +36,11 @@ class SystemCommands(commands.Cog):
             value="Search for a character by name on Anilist.co",
             inline=False,
         )
+        help_embed.add_field(
+            name='$nekoavatar',
+            value="Sends a new profile picture.",
+            inline=False,
+        )
         if os.environ.get("NSFW") == "1":
             help_embed.add_field(
                 name="$sauce <code> - NSFW COMMAND",
@@ -48,18 +53,13 @@ class SystemCommands(commands.Cog):
                 inline=False,
             )
             help_embed.add_field(
-                name='$nekoavatar',
-                value="Sends a new profile picture",
-                inline=False,
-            )
-            help_embed.add_field(
                 name="$nekohavatar - NSFW COMMAND",
                 value="Sends a NSFW profile picture.",
                 inline=False,
             )
             help_embed.add_field(
                 name='$nekolewd - NSFW COMMAND',
-                value="Sends a lewd neko picture",
+                value="Sends a lewd neko picture.",
                 inline=False,
             )
         if fumo_mode.friday_check():

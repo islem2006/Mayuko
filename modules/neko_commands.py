@@ -34,6 +34,7 @@ class NekoCommands(commands.Cog):
 
     if os.environ.get("NSFW") == "1":
         @commands.command(name="nekohavatar")
+        @commands.is_nsfw()
         async def havatar(self, ctx):
             neko_avatar = nekos.img('nsfw_avatar')
             neko_embed = discord.Embed(
@@ -55,6 +56,7 @@ class NekoCommands(commands.Cog):
             await ctx.send(embed=neko_embed)
 
         @commands.command(name="nekolewd")
+        @commands.is_nsfw()
         async def nekolewd(self, ctx):
             neko_avatar = nekos.img('lewd')
             neko_embed = discord.Embed(
