@@ -6,7 +6,7 @@ from dotenv.main import find_dotenv
 from discord.ext import commands
 
 from utils import error_handler, fumo_mode
-from modules import waifu, anilist, hentai_commands, system
+from modules import waifu, anilist, hentai_commands, neko_commands, system
 
 
 client = commands.Bot(command_prefix="$")
@@ -35,6 +35,7 @@ def load_modules():
     client.add_cog(anilist.AnilistCommands(client))
     print("[MOD] Anilist module loaded. (modules/anilist.py)")
 
+
     client.add_cog(system.SystemCommands(client))
     print("[MOD] System module loaded. (modules/system.py)")
 
@@ -42,6 +43,9 @@ def load_modules():
     if os.environ.get("NSFW") == "1":
         client.add_cog(hentai_commands.HentaiCommands(client))
         print("[MOD] Hentai module loaded. (modules/hentai.py)")
+
+        client.add_cog(neko_commands.NekoCommands(client))
+        print("[MOD] Nekos.life module loaded. (modules/neko_commands.py)")
     else:
         print("[MOD] NSFW modules not loaded.")
 

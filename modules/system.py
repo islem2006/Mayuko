@@ -47,6 +47,21 @@ class SystemCommands(commands.Cog):
                 value="Generate a random valid saucecode and display information about it.",
                 inline=False,
             )
+            help_embed.add_field(
+                name='$nekoavatar',
+                value="Sends a new profile picture",
+                inline=False,
+            )
+            help_embed.add_field(
+                name="$nekohavatar - NSFW COMMAND",
+                value="Sends a NSFW profile picture.",
+                inline=False,
+            )
+            help_embed.add_field(
+                name='$nekolewd',
+                value="Sends a lewd neko picture",
+                inline=False,
+            )
         if fumo_mode.friday_check():
             help_embed.set_footer(
                 text="Saucebot v2.0 | Happy Fumo Friday!",

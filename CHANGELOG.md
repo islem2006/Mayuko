@@ -6,6 +6,7 @@
 - Added `$changelog`
 - Cleaned up the messy embeds and other code
 - Updated `.gitignore`
+- Implemented [nekos.life](https://nekos.life) API
 
 ### 12-8-21
 - Added NSFW checking via environment variables
