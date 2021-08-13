@@ -50,7 +50,7 @@ class HentaiCommands(commands.Cog):
             else:
                 hentai_embed.set_footer(
                     text="Data provided by nhentai.net",
-                    icon_url="https://avatarfiles.alphacoders.com/577/57772.png",
+                    icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
                 )
             await ctx.send(embed=hentai_embed)
 

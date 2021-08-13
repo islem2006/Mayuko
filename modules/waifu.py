@@ -35,7 +35,7 @@ class WaifuCommands(commands.Cog):
         else:
             waifu_embed.set_footer(
                 text="Data provided by MyWaifuList.moe",
-                icon_url="https://avatarfiles.alphacoders.com/577/57772.png",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
             )
 
         # Debug logging, just in case

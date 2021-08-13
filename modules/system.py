@@ -70,7 +70,7 @@ class SystemCommands(commands.Cog):
         else:
             help_embed.set_footer(
                 text="Mayuko v2.0",
-                icon_url="https://avatarfiles.alphacoders.com/577/57772.png",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
             )
         await ctx.send(embed=help_embed)
 
