@@ -21,7 +21,7 @@ class AnilistCommands(commands.Cog):
 
         print("Anime result:")
         print(result_anime["name_english"])
-        # print("https://anilist.co/anime/" + str(ani_id))
+        print("https://anilist.co/anime/" + str(ani_id))
         print("=========================================================")
 
         anilist_embed = discord.Embed(

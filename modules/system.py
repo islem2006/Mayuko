@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from dotenv.main import find_dotenv
 from utils import fumo_mode
 
-
 load_dotenv(find_dotenv())
 
 
@@ -23,6 +22,11 @@ class SystemCommands(commands.Cog):
             inline=False,
         )
         help_embed.add_field(
+            name="$changelog",
+            value="View historical changes about Saucebot.",
+            inline=False,
+        )
+        help_embed.add_field(
             name='$anisearch <"Anime name">',
             value="Search for an anime by name on Anilist.co",
             inline=False,
@@ -34,12 +38,12 @@ class SystemCommands(commands.Cog):
         )
         if os.environ.get("NSFW") == "1":
             help_embed.add_field(
-                name="$sauce <code>",
+                name="$sauce <code> - NSFW COMMAND",
                 value="Display information and a thumbnail about the provided saucecode.",
                 inline=False,
             )
             help_embed.add_field(
-                name="$randsauce",
+                name="$randsauce - NSFW COMMAND",
                 value="Generate a random valid saucecode and display information about it.",
                 inline=False,
             )
@@ -54,3 +58,8 @@ class SystemCommands(commands.Cog):
                 icon_url="https://avatarfiles.alphacoders.com/577/57772.png",
             )
         await ctx.send(embed=help_embed)
+
+    @commands.command(pass_context=True)
+    async def changelog(self, ctx):
+        await ctx.send("Changelog is available at https://github.com/DynamicDonkey/Saucebot-V2/CHANGELOG.md." +
+                       "Happy hacking!")
