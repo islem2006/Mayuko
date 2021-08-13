@@ -61,5 +61,5 @@ class SystemCommands(commands.Cog):
 
     @commands.command(pass_context=True)
     async def changelog(self, ctx):
-        await ctx.send("Changelog is available at https://github.com/DynamicDonkey/Saucebot-V2/CHANGELOG.md." +
-                       "Happy hacking!")
+        await ctx.send("Changelog is available at https://github.com/DynamicDonkey/Saucebot-V2/CHANGELOG.md")
+        await ctx.send("Happy hacking!")
