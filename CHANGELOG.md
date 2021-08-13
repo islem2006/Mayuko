@@ -1,6 +1,5 @@
 # Changelog
 
----
 
 ### 13-8-21
 - Added Fumo mode as a joke
