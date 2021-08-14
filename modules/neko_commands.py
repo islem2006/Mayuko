@@ -20,16 +20,10 @@ class NekoCommands(commands.Cog):
             color=0x512DA8
         )
         neko_embed.set_image(url=neko_avatar)
-        if fumo_mode.friday_check():
-            neko_embed.set_footer(
-                text="Data provided by nekos.life | Happy Fumo Friday!",
-                icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
-            )
-        else:
-            neko_embed.set_footer(
-                text="Data provided by nekos.life",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
-            )
+        neko_embed.set_footer(
+            text="Data provided by nekos.life",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+        )
         await ctx.send(embed=neko_embed)
 
     if os.environ.get("NSFW") == "1":
@@ -43,16 +37,10 @@ class NekoCommands(commands.Cog):
                 color=0x512DA8
             )
             neko_embed.set_image(url=neko_avatar)
-            if fumo_mode.friday_check():
-                neko_embed.set_footer(
-                    text="Data provided by nekos.life | Happy Fumo Friday!",
-                    icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
-                )
-            else:
-                neko_embed.set_footer(
-                    text="Data provided by nekos.life",
-                    icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
-                )
+            neko_embed.set_footer(
+                text="Data provided by nekos.life",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+            )
             await ctx.send(embed=neko_embed)
 
         @commands.command(name="nekolewd")
@@ -65,14 +53,8 @@ class NekoCommands(commands.Cog):
                 color=0x512DA8
             )
             neko_embed.set_image(url=neko_avatar)
-            if fumo_mode.friday_check():
-                neko_embed.set_footer(
-                    text="Data provided by nekos.life | Happy Fumo Friday!",
-                    icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
-                )
-            else:
-                neko_embed.set_footer(
-                    text="Data provided by nekos.life",
-                    icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
-                )
+            neko_embed.set_footer(
+                text="Data provided by nekos.life",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+            )
             await ctx.send(embed=neko_embed)

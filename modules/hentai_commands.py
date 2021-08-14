@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from hentai import Hentai, Format, Utils
-from utils import fumo_mode
 
 
 class HentaiCommands(commands.Cog):
@@ -42,16 +41,10 @@ class HentaiCommands(commands.Cog):
             hentai_embed.add_field(
                 name="Favorites", value=str(doujin.num_favorites), inline=False
             )
-            if fumo_mode.friday_check():
-                hentai_embed.set_footer(
-                    text="Data provided by nhentai.net | Happy Fumo Friday!",
-                    icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
-                )
-            else:
-                hentai_embed.set_footer(
-                    text="Data provided by nhentai.net",
-                    icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
-                )
+            hentai_embed.set_footer(
+                text="Data provided by nhentai.net",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+            )
             await ctx.send(embed=hentai_embed)
 
     @commands.command(name="randsauce")

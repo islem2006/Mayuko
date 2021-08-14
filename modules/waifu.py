@@ -27,16 +27,10 @@ class WaifuCommands(commands.Cog):
         )
 
         waifu_embed.set_image(url=waifu_image["content"])
-        if fumo_mode.friday_check():
-            waifu_embed.set_footer(
-                text="Data provided by MyWaifuList.moe | Happy Fumo Friday!",
-                icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
-            )
-        else:
-            waifu_embed.set_footer(
-                text="Data provided by MyWaifuList.moe",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
-            )
+        waifu_embed.set_footer(
+            text="Data provided by MyWaifuList.moe",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+        )
 
         # Debug logging, just in case
         print("Waifu generated!")

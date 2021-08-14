@@ -1,5 +1,11 @@
 # Changelog
 
+### 14-8-21
+- Removed fumo mode. Short joke, right?
+- Implemented ***basic*** logging. I may expand upon this later.
+  - By basic, I mean `import logging` and setting the default level.
+- Split `$help` command into non-NSFW and NSFW
+  - Doing this reverts a change from 12-8-21
 
 ### 13-8-21
 - Added Fumo mode as a joke

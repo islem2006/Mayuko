@@ -1,11 +1,12 @@
 import os
+import logging
 import discord
 
 from dotenv import load_dotenv
 from dotenv.main import find_dotenv
 from discord.ext import commands
 
-from utils import error_handler, fumo_mode
+from utils import error_handler
 from modules import waifu, anilist, hentai_commands, neko_commands, system
 
 
@@ -16,6 +17,9 @@ load_dotenv(find_dotenv())
 
 if __name__ == "__main__":
     print("Mayuko is starting...")
+    logger = logging.getLogger('discord')
+    logger.setLevel(logging.DEBUG)
+
 
 
 @client.event
@@ -47,12 +51,6 @@ def load_modules():
         print("[MOD] Hentai module loaded. (modules/hentai.py)")
     else:
         print("[MOD] NSFW modules not loaded.")
-
-    print("[SYS] Getting weekday... (utils/fumo_mode.py)")
-    if fumo_mode.friday_check():
-        print("[SYS] Fumo Friday!")
-    else:
-        print("[SYS] Not Friday, continuing.")
 
 
 client.run(os.environ.get("TOKEN"))

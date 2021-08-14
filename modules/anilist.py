@@ -2,7 +2,6 @@ import discord
 from AnilistPython import Anilist
 from AnilistPython.botSupport import botSupportClass
 from discord.ext import commands
-from utils import fumo_mode
 
 
 anilist = Anilist()
@@ -52,16 +51,10 @@ class AnilistCommands(commands.Cog):
             value=result_anime["average_score"],
             inline=False
         )
-        if fumo_mode.friday_check():
-            anilist_embed.set_footer(
-                text="Data provided by anilist.net | Happy Fumo Friday!",
-                icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
-            )
-        else:
-            anilist_embed.set_footer(
-                text="Data provided by anilist.net",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
-            )
+        anilist_embed.set_footer(
+            text="Data provided by anilist.net",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+        )
         await ctx.send(embed=anilist_embed)
 
     @commands.command(name='charsearch')
@@ -87,14 +80,8 @@ class AnilistCommands(commands.Cog):
                                       url="https://anilist.co/character/" + str(ani_id))
         anilist_embed.set_image(url=result_char["image"])
         anilist_embed.add_field(name="Native name", value=result_char["native_name"])
-        if fumo_mode.friday_check():
-            anilist_embed.set_footer(
-                text="Data provided by anilist.net | Happy Fumo Friday!",
-                icon_url="https://media.spelunky.fyi/mods/logo/01ESRVJJKV6TRQKP8WAM27365T/1608225737342242.jpg",
-            )
-        else:
-            anilist_embed.set_footer(
-                text="Data provided by anilist.net",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
-            )
+        anilist_embed.set_footer(
+            text="Data provided by anilist.net",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+        )
         await ctx.send(embed=anilist_embed)
