@@ -55,7 +55,7 @@ Start the bot
 ## Authors
 
 - [@DynamicDonkey](https://www.github.com/DynamicDonkey) - Programming
-- Bluntest#5779 - Testing
+- [@Davidm44](https://github.com/Davidm44) - Testing
 
   
 ## License
