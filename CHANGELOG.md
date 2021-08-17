@@ -1,6 +1,8 @@
 # Changelog
 
 ### 17-8-21
+- Add "/100" to the end of Anilist rating.
+  - Idea by [@Younes-Amrani](https://github.com/Younes-Amrani)
 - Updated profile picture to not look like a fursona.
 
 ### 14-8-21

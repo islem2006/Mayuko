@@ -18,6 +18,8 @@ class AnilistCommands(commands.Cog):
         short_desc = result_anime["desc"][0:200]
         final_desc = short_desc + "..."
 
+        final_score = str(result_anime["average_score"]) + "/100"
+
         print("Anime result:")
         print(result_anime["name_english"])
         print("https://anilist.co/anime/" + str(ani_id))
@@ -48,7 +50,7 @@ class AnilistCommands(commands.Cog):
         )
         anilist_embed.add_field(
             name="Average score",
-            value=result_anime["average_score"],
+            value=final_score,
             inline=False
         )
         anilist_embed.set_footer(
