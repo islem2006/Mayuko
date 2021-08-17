@@ -1,5 +1,8 @@
 # Changelog
 
+### 17-8-21
+- Updated profile picture to not look like a fursona.
+
 ### 14-8-21
 - Removed fumo mode. Short joke, right?
 - Implemented ***basic*** logging. I may expand upon this later.
