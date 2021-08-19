@@ -1,5 +1,9 @@
 # Changelog
 
+### 19-8-21
+- Moved profile picture and changelog to `assets/`
+- Added comment to `fumo_mode.py` explaning what happened.
+
 ### 17-8-21
 - Add "/100" to the end of Anilist rating.
   - Idea by [@islem2006](https://github.com/islem2006)

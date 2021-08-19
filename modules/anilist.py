@@ -1,4 +1,5 @@
 import discord
+import re
 from AnilistPython import Anilist
 from AnilistPython.botSupport import botSupportClass
 from discord.ext import commands
@@ -20,8 +21,7 @@ class AnilistCommands(commands.Cog):
 
         final_score = str(result_anime["average_score"]) + "/100"
 
-        print("Anime result:")
-        print(result_anime["name_english"])
+        print("Anime result: " + result_anime["name_english"])
         print("https://anilist.co/anime/" + str(ani_id))
         print("=========================================================")
 
@@ -58,6 +58,8 @@ class AnilistCommands(commands.Cog):
             icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
         )
         await ctx.send(embed=anilist_embed)
+
+
 
     @commands.command(name='charsearch')
     async def charsearch(self, ctx, arg):

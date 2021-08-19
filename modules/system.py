@@ -1,11 +1,7 @@
-import os
 import discord
 from discord.ext import commands
-from dotenv import load_dotenv
-from dotenv.main import find_dotenv
-from utils import fumo_mode
 
-load_dotenv(find_dotenv())
+from utils import fumo_mode
 
 
 class SystemCommands(commands.Cog):
@@ -83,5 +79,5 @@ class SystemCommands(commands.Cog):
 
     @commands.command(pass_context=True)
     async def changelog(self, ctx):
-        await ctx.send("Changelog is available at https://github.com/DynamicDonkey/Mayuko/blob/master/CHANGELOG.md")
+        await ctx.send("Changelog is available at https://github.com/DynamicDonkey/Mayuko/blob/master/assets/CHANGELOG.md")
         await ctx.send("Happy hacking!")

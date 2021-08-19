@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from dotenv.main import find_dotenv
 from discord.ext import commands
 
+from discord_slash import SlashCommand, SlashContext
+
 from utils import error_handler
 from modules import waifu, anilist, hentai_commands, neko_commands, system
 
@@ -19,7 +21,6 @@ if __name__ == "__main__":
     print("Mayuko is starting...")
     logger = logging.getLogger('discord')
     logger.setLevel(logging.DEBUG)
-
 
 
 @client.event
