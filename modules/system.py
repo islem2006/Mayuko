@@ -7,6 +7,7 @@ from utils import fumo_mode
 class SystemCommands(commands.Cog):
     @commands.command(pass_context=True)
     async def help(self, ctx, arg=None):
+        # sourcery skip: hoist-statement-from-if
         help_embed = discord.Embed(
             title="Help",
             description="Learn commands and how to use them here!",
@@ -46,12 +47,12 @@ class SystemCommands(commands.Cog):
             )
 
             help_embed.add_field(
-                name='$anisearch <"Anime name">',
+                name='$anisearch "Anime name"',
                 value="Search for an anime by name on Anilist.co",
                 inline=False,
             )
             help_embed.add_field(
-                name='$charsearch <"Character name">',
+                name='$charsearch "Character name"',
                 value="Search for a character by name on Anilist.co",
                 inline=False,
             )
