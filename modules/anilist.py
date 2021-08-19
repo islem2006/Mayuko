@@ -1,5 +1,6 @@
 import discord
-import re
+
+from datetime import datetime
 from AnilistPython import Anilist
 from AnilistPython.botSupport import botSupportClass
 from discord.ext import commands
@@ -19,6 +20,16 @@ class AnilistCommands(commands.Cog):
         short_desc = result_anime["desc"][0:200]
         final_desc = short_desc + "..."
 
+        genres = str(result_anime["genres"])
+        no_bracket_list = str(genres[1:-1])
+        translation = {39: None, 91: None, 93: None}
+        final_list = str(no_bracket_list.translate(translation))
+
+        # UNCOMMENT THESE IF I NEED INFO BECAUSE DOCS ARE FOR CHUMPS
+        # print(result_anime)
+        # print("==================")
+        # print(anilist_id)
+
         final_score = str(result_anime["average_score"]) + "/100"
 
         print("Anime result: " + result_anime["name_english"])
@@ -36,6 +47,11 @@ class AnilistCommands(commands.Cog):
         anilist_embed.add_field(
             name="Romaji name",
             value=result_anime["name_romaji"],
+            inline=False
+        )
+        anilist_embed.add_field(
+            name="Genres",
+            value=final_list,
             inline=False
         )
         anilist_embed.add_field(
@@ -59,7 +75,7 @@ class AnilistCommands(commands.Cog):
         )
         await ctx.send(embed=anilist_embed)
 
-    @commands.command(name='charsearch')
+    @ commands.command(name='charsearch')
     async def charsearch(self, ctx, arg):
         result_char = anilist_bot.getCharacterInfo(arg)
         anilist_id = anilist.extractID.character(result_char["first_name"])
