@@ -14,7 +14,7 @@ class CommandErrorHandler(commands.Cog):
                 name="NSFW content",
                 value=f"{ctx.command} is disabled in non-NSFW channels."
             )
-            error_embed.set_image(
+            error_embed.set_thumbnail(
                 url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/nsfw_error.png"
             )
             error_embed.set_footer(
