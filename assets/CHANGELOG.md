@@ -4,6 +4,7 @@
 - Moved profile picture and changelog to `assets/`
 - Added comment to `fumo_mode.py` explaning what happened.
 - Added genres to `$anisearch`
+  - [@islem2006](https://github.com/islem2006) - [Send a pr next time](https://hakurei.reeee.ee/57AhesrjR)
 - Changed NSFW error message to an embed
   - Added Sagiri picture just because I thought it would be funny
 
