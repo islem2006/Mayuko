@@ -43,7 +43,7 @@ class HentaiCommands(commands.Cog):
             )
             hentai_embed.set_footer(
                 text="Data provided by nhentai.net",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
             )
             await ctx.send(embed=hentai_embed)
 

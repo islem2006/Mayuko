@@ -29,7 +29,7 @@ class WaifuCommands(commands.Cog):
         waifu_embed.set_image(url=waifu_image["content"])
         waifu_embed.set_footer(
             text="Data provided by MyWaifuList.moe",
-            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
         )
 
         # Debug logging, just in case

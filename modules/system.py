@@ -35,7 +35,7 @@ class SystemCommands(commands.Cog):
             )
             help_embed.set_footer(
                 text="Mayuko",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
             )
             await ctx.send(embed=help_embed)
         else:
@@ -72,10 +72,9 @@ class SystemCommands(commands.Cog):
             )
             help_embed.set_footer(
                 text="Mayuko",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
             )
             await ctx.send(embed=help_embed)
-
 
     @commands.command(pass_context=True)
     async def changelog(self, ctx):

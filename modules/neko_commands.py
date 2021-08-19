@@ -22,7 +22,7 @@ class NekoCommands(commands.Cog):
         neko_embed.set_image(url=neko_avatar)
         neko_embed.set_footer(
             text="Data provided by nekos.life",
-            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
         )
         await ctx.send(embed=neko_embed)
 
@@ -39,7 +39,7 @@ class NekoCommands(commands.Cog):
             neko_embed.set_image(url=neko_avatar)
             neko_embed.set_footer(
                 text="Data provided by nekos.life",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
             )
             await ctx.send(embed=neko_embed)
 
@@ -55,6 +55,6 @@ class NekoCommands(commands.Cog):
             neko_embed.set_image(url=neko_avatar)
             neko_embed.set_footer(
                 text="Data provided by nekos.life",
-                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
             )
             await ctx.send(embed=neko_embed)

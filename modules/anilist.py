@@ -55,11 +55,9 @@ class AnilistCommands(commands.Cog):
         )
         anilist_embed.set_footer(
             text="Data provided by anilist.net",
-            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
         )
         await ctx.send(embed=anilist_embed)
-
-
 
     @commands.command(name='charsearch')
     async def charsearch(self, ctx, arg):
@@ -83,9 +81,10 @@ class AnilistCommands(commands.Cog):
                                       color=0x02A9FF,
                                       url="https://anilist.co/character/" + str(ani_id))
         anilist_embed.set_image(url=result_char["image"])
-        anilist_embed.add_field(name="Native name", value=result_char["native_name"])
+        anilist_embed.add_field(
+            name="Native name", value=result_char["native_name"])
         anilist_embed.set_footer(
             text="Data provided by anilist.net",
-            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/pfp.jpg",
+            icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg"
         )
         await ctx.send(embed=anilist_embed)
