@@ -3,6 +3,8 @@
 ### 19-8-21
 - Moved profile picture and changelog to `assets/`
 - Added comment to `fumo_mode.py` explaning what happened.
+- Changed NSFW error message to an embed
+  - Added Sagiri picture just because I thought it would be funny
 
 ### 17-8-21
 - Add "/100" to the end of Anilist rating.

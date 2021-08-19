@@ -71,8 +71,8 @@ class AnilistCommands(commands.Cog):
         if last_name == "None":
             last_name = " "
 
-        print("Character result:")
-        print(str(result_char["first_name"] + " " + last_name))
+        print("Character result: " +
+              str(result_char["first_name"] + " " + last_name))
         print("https://anilist.co/character/" + str(ani_id))
         print("=========================================================")
 
