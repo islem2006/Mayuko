@@ -2,6 +2,7 @@
 
 ### 19-8-21
 - Moved profile picture and changelog to `assets/`
+- Added `$info` command.
 - Added comment to `fumo_mode.py` explaning what happened.
 - Added genres to `$anisearch`
   - [@islem2006](https://github.com/islem2006) - [Send a pr next time](https://hakurei.reeee.ee/57AhesrjR)
