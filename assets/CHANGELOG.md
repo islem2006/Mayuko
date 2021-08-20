@@ -4,6 +4,8 @@
 - Added check for next airing episode in `$anisearch`.
   - If check passes, date of next episode will be shown.
   - If fail, the embed field will be hidden entirely.
+- Added status change every 24 minutes.
+  - Status is read from `assets/anime.txt`
 
 ### 19-8-21
 - Moved profile picture and changelog to `assets/`

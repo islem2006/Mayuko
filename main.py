@@ -1,10 +1,13 @@
 import os
 import logging
 import discord
+import random
+import asyncio
+
 
 from dotenv import load_dotenv
 from dotenv.main import find_dotenv
-from discord.ext import commands
+from discord.ext import commands, tasks
 
 from utils import error_handler
 from modules import waifu, anilist, hentai_commands, neko_commands, system
@@ -15,16 +18,24 @@ client.remove_command("help")
 load_dotenv(find_dotenv())
 
 
-if __name__ == "__main__":
-    print("Mayuko is starting...")
-    logger = logging.getLogger('discord')
-    logger.setLevel(logging.DEBUG)
+def random_line(fname):
+    lines = open(fname).read().splitlines()
+    return random.choice(lines)
+
+
+async def update_status():
+    while True:
+        print("[SYS] Setting status")
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=random_line('assets/anime.txt')))
+        await asyncio.sleep(1440)
 
 
 @client.event
 async def on_ready():
     load_modules()
-    await client.change_presence(activity=discord.Game("$help >///<"))
+    await update_status()
+    client.loop.create_task(update_status())
+
     print("Bot is ready!\n")
 
 
@@ -52,4 +63,9 @@ def load_modules():
         print("[MOD] NSFW modules not loaded.")
 
 
-client.run(os.environ.get("TOKEN"))
+if __name__ == "__main__":
+    print("Mayuko is starting...")
+
+    client.run(os.environ.get("TOKEN"))
+    logger = logging.getLogger('discord')
+    logger.setLevel(logging.DEBUG)
