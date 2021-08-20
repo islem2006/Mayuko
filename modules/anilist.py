@@ -1,4 +1,5 @@
 import discord
+import re
 
 from datetime import datetime
 from AnilistPython import Anilist
@@ -16,9 +17,9 @@ class AnilistCommands(commands.Cog):
         result_anime = anilist_bot.getAnimeInfo(arg)
         anilist_id = anilist.extractID.anime(result_anime["name_english"])
         ani_id = anilist_id["data"]["Page"]["media"][0]["id"]
-
-        short_desc = result_anime["desc"][0:200]
-        final_desc = short_desc + "..."
+        desc = result_anime["desc"][0:200]
+        cleanr = re.compile('<.*?>')
+        final_desc = re.sub(cleanr, '', desc) + "..."
 
         genres = str(result_anime["genres"])
         no_bracket_list = str(genres[1:-1])
