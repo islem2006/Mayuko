@@ -34,9 +34,9 @@ async def update_status():
 async def on_ready():
     load_modules()
     await update_status()
-    client.loop.create_task(update_status())
 
     print("Bot is ready!\n")
+    client.loop.create_task(update_status())
 
 
 def load_modules():
