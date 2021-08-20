@@ -64,6 +64,13 @@ class AnilistCommands(commands.Cog):
             value=result_anime["airing_episodes"],
             inline=False
         )
+        if result_anime['next_airing_ep'] is not None:
+            anilist_embed.add_field(
+                name="Next episode",
+                value=str(datetime.utcfromtimestamp(
+                    result_anime['next_airing_ep']['airingAt']).strftime('%d/%m/%Y')),
+                inline=False
+            )
         anilist_embed.add_field(
             name="Average score",
             value=final_score,

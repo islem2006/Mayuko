@@ -1,5 +1,10 @@
 # Changelog
 
+### 20-8-21
+- Added check for next airing episode in `$anisearch`.
+  - If check passes, date of next episode will be shown.
+  - If fail, the embed field will be hidden entirely.
+
 ### 19-8-21
 - Moved profile picture and changelog to `assets/`
 - Added `$info` command.
