@@ -7,7 +7,7 @@ import asyncio
 
 from dotenv import load_dotenv
 from dotenv.main import find_dotenv
-from discord.ext import commands, tasks
+from discord.ext import commands
 
 from utils import error_handler
 from modules import waifu, anilist, hentai_commands, neko_commands, system
