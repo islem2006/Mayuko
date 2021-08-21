@@ -10,7 +10,6 @@ from discord.ext import commands
 anilist = Anilist()
 anilist_bot = botSupportClass()
 
-
 class AnilistCommands(commands.Cog):
     @commands.command(name="anisearch")
     async def anisearch(self, ctx, arg):
@@ -88,8 +87,9 @@ class AnilistCommands(commands.Cog):
         result_char = anilist_bot.getCharacterInfo(arg)
         anilist_id = anilist.extractID.character(result_char["first_name"])
         ani_id = anilist_id["data"]["Page"]["characters"][0]["id"]
-
-        short_desc = result_char["desc"][0:200] + "..."
+        char_desc = result_char["desc"][0:200]
+        cleanr = re.compile('<.*?>')
+        short_desc = re.sub(cleanr, '', char_desc) + "..."
 
         last_name = str(result_char["last_name"])
         if last_name == "None":
