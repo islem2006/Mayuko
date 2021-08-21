@@ -7,7 +7,7 @@ import asyncio
 
 from dotenv import load_dotenv
 from dotenv.main import find_dotenv
-from discord.ext import commands, tasks
+from discord.ext import commands
 
 from utils import error_handler
 from modules import waifu, anilist, hentai_commands, neko_commands, system
@@ -33,10 +33,10 @@ async def update_status():
 @client.event
 async def on_ready():
     load_modules()
-    await update_status()
-    client.loop.create_task(update_status())
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=random_line('assets/anime.txt')))
 
     print("Bot is ready!\n")
+    client.loop.create_task(update_status())
 
 
 def load_modules():

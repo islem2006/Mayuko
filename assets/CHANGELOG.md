@@ -6,6 +6,7 @@
   - If fail, the embed field will be hidden entirely.
 - Added status change every 24 minutes.
   - Status is read from `assets/anime.txt`
+- Parse descriptions to remove any HTML tags from Anilist
 
 ### 19-8-21
 - Moved profile picture and changelog to `assets/`
