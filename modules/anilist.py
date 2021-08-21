@@ -18,9 +18,12 @@ class AnilistCommands(commands.Cog):
         anilist_id = anilist.extractID.anime(result_anime["name_english"])
         ani_id = anilist_id["data"]["Page"]["media"][0]["id"]
         english_name = result_anime["name_english"]
-        cleanr = re.compile('<.*?>')
+
+        airing_format = str(result_anime["airing_format"])
+
+        remove_html = re.compile('<.*?>')
         desc = result_anime["desc"]
-        regex_desc = re.sub(cleanr, '', desc)
+        regex_desc = re.sub(remove_html, '', desc)
 
         genres = str(result_anime["genres"])
         no_bracket_list = str(genres[1:-1])
@@ -55,6 +58,11 @@ class AnilistCommands(commands.Cog):
         anilist_embed.add_field(
             name="Romaji name",
             value=result_anime["name_romaji"],
+            inline=False
+        )
+        anilist_embed.add_field(
+            name="Airing format",
+            value=airing_format,
             inline=False
         )
         anilist_embed.add_field(

@@ -1,5 +1,9 @@
 # Changelog
 
+### 21-8-21
+- Added airing format to anilist embed.
+- Added null checking for missing english name.
+
 ### 20-8-21
 - Added check for next airing episode in `$anisearch`.
   - If check passes, date of next episode will be shown.
