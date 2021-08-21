@@ -17,6 +17,7 @@ class AnilistCommands(commands.Cog):
         result_anime = anilist_bot.getAnimeInfo(arg)
         anilist_id = anilist.extractID.anime(result_anime["name_english"])
         ani_id = anilist_id["data"]["Page"]["media"][0]["id"]
+        english_name = result_anime["name_english"]
         cleanr = re.compile('<.*?>')
         desc = result_anime["desc"]
         regex_desc = re.sub(cleanr, '', desc)
@@ -27,18 +28,24 @@ class AnilistCommands(commands.Cog):
         final_list = str(no_bracket_list.translate(translation))
 
         # UNCOMMENT THESE IF I NEED INFO BECAUSE DOCS ARE FOR CHUMPS
-        # print(result_anime)
-        # print("==================")
-        # print(anilist_id)
+        print(result_anime)
+        print("==================")
+        print(anilist_id)
 
         final_score = str(result_anime["average_score"]) + "/100"
+
+        if english_name is None:
+            english_name = result_anime['name_romaji']
+
+        print(english_name)
 
         print("Anime result: " + result_anime["name_english"])
         print("https://anilist.co/anime/" + str(ani_id))
         print("=========================================================")
 
         anilist_embed = discord.Embed(
-            title=result_anime["name_english"],
+            # title=result_anime["name_english"],
+            title=str(english_name),
             description=regex_desc[0:200] + "...",
             color=0x02A9FF,
             url="https://anilist.co/anime/" + str(ani_id))
