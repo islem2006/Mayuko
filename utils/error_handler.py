@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 
+
 class CommandErrorHandler(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
@@ -9,11 +10,22 @@ class CommandErrorHandler(commands.Cog):
             color=0xE94D4E
         )
         if isinstance(error, commands.ConversionError):
-            return # Return because we don't want to send a message every single time
+            return  # Not implemented, maybe in the future.
         if isinstance(error, commands.CommandNotFound):
-            return # Return because we don't want to send a message every single time
+            return  # Will not be implemented.
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send("Detected a missing parameter.")
+            error_embed.add_field(
+                name="Syntax error",
+                value=f"{ctx.command} is missing a required argument."
+            )
+            error_embed.set_thumbnail(
+                url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/syntaxt_error.png"
+            )
+            error_embed.set_footer(
+                text="Mayuko",
+                icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
+            )
+            await ctx.send(embed=error_embed)
         if isinstance(error, commands.BotMissingPermissions):
             await ctx.send("Detected a missing permission.")
         if isinstance(error, commands.NSFWChannelRequired):

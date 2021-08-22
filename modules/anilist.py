@@ -10,6 +10,7 @@ from discord.ext import commands
 anilist = Anilist()
 anilist_bot = botSupportClass()
 
+
 class AnilistCommands(commands.Cog):
     @commands.command(name="anisearch")
     async def anisearch(self, ctx, arg):
@@ -44,7 +45,7 @@ class AnilistCommands(commands.Cog):
         print("Anime result: " + result_anime["name_english"])
         print("https://anilist.co/anime/" + str(ani_id))
         print("=========================================================")
-        
+
         anilist_embed = discord.Embed(
             # title=result_anime["name_english"],
             title=str(english_name),
@@ -96,7 +97,7 @@ class AnilistCommands(commands.Cog):
             icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
         )
         await ctx.send(embed=anilist_embed)
-    
+
     @ commands.command(name='charsearch')
     async def charsearch(self, ctx, arg):
         result_char = anilist_bot.getCharacterInfo(arg)
