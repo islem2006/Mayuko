@@ -1,5 +1,16 @@
+import traceback
 import discord
+import sys
 from discord.ext import commands
+
+
+class NonDiscordErrors():
+    async def AnimeNotFoundError(self, ctx, error):
+        error_embed = discord.Embed(
+            title="Error",
+            color=0xE94D4E
+        )
+        await ctx.send(embed=error_embed)
 
 
 class CommandErrorHandler(commands.Cog):
@@ -9,10 +20,8 @@ class CommandErrorHandler(commands.Cog):
             title="Error",
             color=0xE94D4E
         )
-        if isinstance(error, commands.ConversionError):
-            return  # Not implemented, maybe in the future.
-        if isinstance(error, commands.CommandNotFound):
-            return  # Will not be implemented.
+        if hasattr(ctx.command, 'on_error'):
+            return
         if isinstance(error, commands.MissingRequiredArgument):
             error_embed.add_field(
                 name="Syntax error",
@@ -41,3 +50,9 @@ class CommandErrorHandler(commands.Cog):
                 icon_url="https://raw.githubusercontent.com/DynamicDonkey/Mayuko/master/assets/pfp.jpg",
             )
             await ctx.send(embed=error_embed)
+        else:
+            # All other Errors not returned come here. And we can just print the default TraceBack.
+            print('Ignoring exception in command {}:'.format(
+                ctx.command), file=sys.stderr)
+            traceback.print_exception(
+                type(error), error, error.__traceback__, file=sys.stderr)
