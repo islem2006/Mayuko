@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 
-
 class CommandErrorHandler(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
@@ -9,6 +8,14 @@ class CommandErrorHandler(commands.Cog):
             title="Error",
             color=0xE94D4E
         )
+        if isinstance(error, commands.ConversionError):
+            return # Return because we don't want to send a message every single time
+        if isinstance(error, commands.CommandNotFound):
+            return # Return because we don't want to send a message every single time
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send("Detected a missing parameter.")
+        if isinstance(error, commands.BotMissingPermissions):
+            await ctx.send("Detected a missing permission.")
         if isinstance(error, commands.NSFWChannelRequired):
             error_embed.add_field(
                 name="NSFW content",
